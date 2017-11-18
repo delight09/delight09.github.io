@@ -1,0 +1,75 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.footer_title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <p>{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          {% if site.stackoverflow_username %}
+          <li>
+            {% include icon-stackoverflow.html username=site.stackoverflow_username %}
+          </li>
+          {% endif %}
+
+          {% if site.reddit_username %}
+          <li>
+            {% include icon-reddit.html username=site.reddit_username %}
+          </li>
+          {% endif %}
+
+          {% if site.xiami_username %}
+          <li>
+            {% include icon-xiami.html username=site.xiami_username %}
+          </li>
+          {% endif %}
+
+          {% if site.githubla_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.steam_username %}
+          <li>
+            {% include icon-steam.html username=site.steam_username %}
+          </li>
+          {% endif %}
+
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+	      <a href="https://github.com/delight09" style="display: block">
+	      <object type="image/svg+xml" data="https://gist.github.com.ru/delight09/62e86ad5f7c1907572dc9918ee4448bd?last-x-weeks=20&height=80&width=280&username=delight09" style="pointer-events: none;">
+		        Github Contributions Calendar for delight09
+	      </object></a>
+      </div>
+    </div>
+
+  </div>
+  <div class="wrapper footer-metadata">
+	  <span>Proudly Powered By <a href="https://jekyllrb.com/docs/home/">Jekyll</a></span>
+	  <span>&nbsp;|&nbsp;</span>
+	  <span>Modified theme from <a href="https://rubygems.org/gems/minima">minima</a></span>
+	  <span>&nbsp;|&nbsp;</span>
+	  <span>Hosted at <a href="https://m.do.co/c/e23dd2023189">DigitalOcean Toronto</a></span>
+	  <span>&nbsp;|&nbsp;</span>
+	  <span id="metadata-release"><a href="https://github.com/delight09/delight09.github.io/releases">v0.0.1</a></span>
+	  <span>&nbsp;·&nbsp;</span>
+	  <span id="metadata-pagespeed"></span>
+	  <span>&nbsp;·&nbsp;</span>
+	  <span id="metadata-utc-timedate">
+            <!--#config timefmt="UTC %H:%M" -->
+            <!--#echo var="DATE_LOCAL" -->
+	  </span>
+	  <span>&nbsp;|&nbsp;</span>
+	  <span>Material licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></span>
+  </div>
+
+</footer>

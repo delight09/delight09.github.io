@@ -1,0 +1,13 @@
+<script>
+window.addEventListener('load', magicApacheFooter, false);
+
+function magicApacheFooter() {
+  // update timestamp
+  let _ts_curr = Math.floor(Date.now() / 1000);
+  document.getElementById('metadata-pagespeed').innerHTML = (_ts_curr - window.MAGIC_APACHE_TS) + 'ms';
+
+  // update HIT
+  // not implemented
+
+}
+</script>
