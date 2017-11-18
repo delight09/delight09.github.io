@@ -1,0 +1,16 @@
+/* MYSELF */
+Call me: Jiahao
+Site: me<at>djh.im, https://blog.djh.im/
+Maxim: 向死而生，永不后悔 - Being toward death, do not regret.
+github: delight09
+Location: China
+
+/* THANKS */
+All of you the readers
+
+/* SITE */
+Last update: 2017/11/19
+Language: English / Chinese
+Standards: HTML5, CSS3, SVG1.1, Atom1.0
+Components: plain javascript
+Software: ArchLinux, st, vim

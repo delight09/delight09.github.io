@@ -1,0 +1,30 @@
+User-agent:  Baiduspider
+Disallow:  /
+
+User-Agent:  Googlebot
+Allow: *.html
+Disallow:  /mycgi/
+
+User-agent:  Bingbot
+Allow: *.html
+Disallow:  /mycgi/
+
+User-Agent:  360Spider
+Disallow:  /
+
+User-Agent:  Yisouspider
+Disallow:  /
+
+User-Agent:  Sogouspider
+Allow: *.html
+Disallow:  /mycgi/
+
+User-Agent:  Yahoo!  Slurp
+Allow: *.html
+Disallow:  /mycgi/
+
+User-Agent:  *
+Allow: *.html
+Disallow:  /mycgi/
+
+Sitemap: https://blog.djh.im/sitemap.xml
