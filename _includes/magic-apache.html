@@ -8,8 +8,8 @@ function magicApacheFooter() {
         document.getElementById('metadata-pagespeed').innerHTML = (_ts_curr - window.MAGIC_APACHE_TS) + 'ms';
     }
 
-    // update HIT
-    // not implemented
-
+}
+function updateHits(data) {
+        document.getElementById('metadata-hit').innerHTML = 'HIT ' + data.count;
 }
 </script>
