@@ -1,0 +1,33 @@
+<script>
+    document.getElementsByClassName("comments-wrapper-stroke")[0].addEventListener("click", resizeCommentsBox);
+document.getElementById("comments-prompt").addEventListener("click", resizeCommentsBox);
+
+function resizeCommentsBox() {
+    let _o = document.getElementById("comments-loader");
+
+    if (!_o.src) { // not loaded, init comments
+        _o.src = 'http://comments.blog.djh.im:7123/js/embed.min.js';
+    }
+
+    _o = document.getElementById("comments-content");
+    if (_o.style.display === 'none') {
+        _o.style.display = 'block';
+
+        _o = document.getElementById("comments-box");
+        _o.style.margin = '0';
+        _o.style.height = '100%';
+        _o = document.getElementById("comments-prompt");
+        _o.innerHTML = '关闭评论';
+    } else {
+        _o.style.display = 'none';
+
+        _o = document.getElementById("comments-box");
+        _o.style.margin = '0 3.5em';
+        _o.style.height = '3.123em';
+        _o = document.getElementById("comments-prompt");
+        _o.innerHTML = '展开评论';
+    }
+
+
+}
+</script>

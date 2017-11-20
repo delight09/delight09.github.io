@@ -255,3 +255,71 @@
     }
   }
 }
+
+
+/**
+ * Comments-box
+ */
+.comments-wrapper {
+  background-color: darken($background-color, 5%);
+  height: 3.125em;
+  margin: 0em 3.5em;
+  overflow: hidden;
+  text-align: center;
+  padding: 0.125em;
+}
+
+.top-stroke {
+  stroke: $brand-color;
+  stroke-width: 0.825em;
+  stroke-linecap: "butt";
+}
+.comments-wrapper-stroke {
+  cursor: pointer;
+  fill: transparent;
+  stroke-dasharray: 1 9999;
+  stroke-dashoffset: 0;
+  stroke-width: 0.825em;
+  stroke: $brand-color;
+}
+
+#comments-prompt {
+  cursor: pointer;
+  position: relative;
+  top: -1.875em;
+  color: $text-color;
+  @include relative-font-size(1.75);
+  letter-spacing: 0.125em;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 1 9999;
+    stroke-dashoffset: 0;
+    stroke-width: 0.825em;
+  }
+  100% {
+    stroke-dasharray: 9999;
+    stroke-dashoffset: 0;
+    stroke-width: 0.5em;
+  }
+}
+
+@keyframes slim {
+  0% {
+    stroke-width: 0.825em;
+  }
+  100% {
+    stroke-width: 0.5em;
+  }
+}
+
+.comments-wrapper:hover .comments-wrapper-stroke {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+.comments-wrapper:hover .top-stroke {
+  -webkit-animation: 0.5s slim linear forwards;
+  animation: 0.5s slim linear forwards;
+}
