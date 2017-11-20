@@ -1,6 +1,14 @@
 <script>
     document.getElementsByClassName("comments-wrapper-stroke")[0].addEventListener("click", resizeCommentsBox);
-document.getElementById("comments-prompt").addEventListener("click", resizeCommentsBox);
+    document.getElementById("comments-prompt").addEventListener("click", resizeCommentsBox);
+
+    // set comments tid to forgiving URL pattern difference
+    var l = window.location.pathname;
+    l = l.substr(0, l.lastIndexOf('.')) || l; // remove suffix if exists
+    l = l.match(/.*\/(.+)$/)[1]; // get basename
+    l = l.substr(0, l.lastIndexOf('/')) || l; // remove tailing slash if exists
+    document.getElementById("isso-thread").setAttribute("data-isso-id", l);
+
 
 function resizeCommentsBox() {
     let _o = document.getElementById("comments-loader");
