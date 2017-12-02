@@ -50,4 +50,4 @@ defaults:
       path: ""
       type: posts
     values:
-      is_post: true
+      comments_enable: true

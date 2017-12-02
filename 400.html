@@ -21,20 +21,20 @@ comments_enable: true
 </style>
 
 <div class="container">
-  <h1>404</h1>
+  <h1>400</h1>
 
-  <a href="https://httpstatusdogs.com/404-not-found">
-    <img src="/assets/httpstatusdogs-404.jpg" style="border:0;" alt="httpstatusdogs-404" title="Credit to httpstatusdogs.com"/>
+  <a href="https://httpstatusdogs.com/400">
+    <img src="/assets/httpstatusdogs-400.jpg" style="border:0;" alt="httpstatusdogs-400" title="Credit to httpstatusdogs.com"/>
   </a>
   
-  <p class="error-page-explain"><strong>/!\</strong>&nbsp;抱歉，您指定的资源无法在服务器上找到。但您可以选择提供帮助，在下方留言吧。博主会尝试修复它的。&nbsp;
-  Sorry, this URL leads to nothing... But you can choose to lend a hand by leaving a comment below. Let's fix the broken links.</p>
+  <p class="error-page-explain"><strong>/!\</strong>&nbsp;抱歉，您的请求服务器无法理解。但您可以选择提供帮助，在下方留言吧。博主会尝试修复它的。&nbsp;
+  Sorry, this URL seems invalid for responing... But you can choose to lend a hand by leaving a comment below. Let's try to fix problems.</p>
 </div>
 {% include isso_comments.html %}
 {% include comments_handler.html %}
 <script>
   // error pages got the same comment thread
-  document.getElementById("isso-thread").setAttribute("data-isso-id", "404");
+  document.getElementById("isso-thread").setAttribute("data-isso-id", "400");
   // auto unfold on error pages
   window.addEventListener('load', errorpageCommentsHandler, false);
 
