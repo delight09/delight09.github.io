@@ -1,6 +1,14 @@
 #comments-content {
     margin: 0 3.5em;
     text-align: left;
+    position: relative;
+}
+
+.comments-poweredby {
+    position: absolute;
+    bottom: -1.5em;
+    right: 0;
+    font-size: 0.725em;
 }
 #isso-thread * {
     -webkit-box-sizing: border-box;

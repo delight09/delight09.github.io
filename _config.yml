@@ -11,7 +11,7 @@ url: https://blog.djh.im
 logo: /assets/trusty-logo-20171119.png
 host: blog.djh.im
 port: 80
-version: v0.0.1
+version: v0.0.2
 
 # social network spec
 github_username:  delight09
