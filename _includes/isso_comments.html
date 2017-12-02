@@ -1,19 +1,22 @@
-  <div class="comments-wrapper" id="comments-box">
-	  <svg height="3.125em" width="100%" xmlns="http://www.w3.org/2000/svg">
-		  <line class="top-stroke" x1="0" x2="99999" y1="0" y2="0" />
-		  <rect class="comments-wrapper-stroke" height="100%" width="100%" />
-	  </svg>
-          <span id="comments-prompt">展开评论</span>
-	  <div id="comments-content" style="display: none;">
-      <script id="comments-loader"
-	      data-isso-css="false"
-              data-isso="https://comments.blog.djh.im:7223"
-	      data-isso-require-author="true"
-              data-isso-avatar="true"
-              data-isso-vote="false"
-      ></script>
+<div class="comments-wrapper" id="comments-box">
+  <svg height="3.125em" width="100%" xmlns="http://www.w3.org/2000/svg">
+    <line class="top-stroke" x1="0" x2="99999" y1="0" y2="0" />
+    <rect class="comments-wrapper-stroke" height="100%" width="100%" />
+  </svg>
+  <span id="comments-prompt">展开评论</span>
+  <div id="comments-loading-prompt" style="display: none;">
+    <img src="/assets/comments-loading-prompt.gif" />&nbsp;载入中...
+  </div>
+  <div id="comments-content" style="display: none;">
+    <script id="comments-loader"
+	    data-isso-css="false"
+            data-isso="https://comments.blog.djh.im:7223"
+	    data-isso-require-author="true"
+            data-isso-avatar="true"
+            data-isso-vote="false"
+	    ></script>
 
     <section id="isso-thread"></section>
 
-	  </div>
+  </div>
 </div>

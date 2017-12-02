@@ -1,6 +1,12 @@
 <head>
   <script>
-    window.MAGIC_APACHE_TS=<!--#include virtual="/mycgi/getMilliSeconds.cgi" -->;
+  str_ssi = '<!--#include virtual="/mycgi/getMilliSeconds.cgi" -->';
+  if (str_ssi.indexOf('--') != -1) { // SSI not parsed
+    str_ssi = '';
+  }
+  (function (ts) {
+    window.MAGIC_APACHE_TS = ts;
+  }) (str_ssi)
   </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -4,9 +4,8 @@
 
     // set comments tid to forgiving URL pattern difference
     var l = window.location.pathname;
-    l = l.substr(0, l.lastIndexOf('.')) || l; // remove suffix if exists
-    l = l.match(/.*\/(.+)$/)[1]; // get basename
-    l = l.substr(0, l.lastIndexOf('/')) || l; // remove tailing slash if exists
+    l = l.substr(0, l.lastIndexOf('/')) || l; // get folder for `index.html`
+    l = l.match(/.*\/(.+)$/)[1]; // get dirname
     document.getElementById("isso-thread").setAttribute("data-isso-id", l);
 
 
@@ -15,6 +14,8 @@ function resizeCommentsBox() {
 
     if (!_o.src) { // not loaded, init comments
         _o.src = 'https://comments.blog.djh.im:7223/js/embed.min.js';
+        _o = document.getElementById("comments-loading-prompt");
+        _o.style.display = 'block';
     }
 
     _o = document.getElementById("comments-content");
@@ -36,6 +37,12 @@ function resizeCommentsBox() {
         _o.innerHTML = '展开评论';
     }
 
+}
+
+
+function hideLoadingPrompt() {
+    let _o = document.getElementById("comments-loading-prompt");
+    _o.style.display = 'none';
 
 }
 </script>
