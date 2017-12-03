@@ -33,7 +33,7 @@ social:
 # Build settings
 markdown: kramdown
 theme: minima
-permalink: pretty
+permalink: /:categories/:title/
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -51,3 +51,5 @@ defaults:
       type: posts
     values:
       comments_enable: true
+      author: Jiahao
+      lang: zh_CN
