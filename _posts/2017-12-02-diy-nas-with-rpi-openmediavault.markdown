@@ -5,6 +5,7 @@ categories: nas
 tags: [rpi, low-end, nas, management, linux]
 image: /assets/diy-nas-with-rpi-openmediavault/feature.jpg
 description: 使用两条U盘组成RAID1作为存储介质，树梅派1代b型作为主机。使用qshell工具从AliOSS获得bucket所有资源URL。通过vmstat检测分析FTP和SMB两种常见NAS服务的性能数据，结果性能相近，可根据实际需要开启或关闭。讨论了RAID1自建NAS的一般灾备操作。最后使用第三方服务和一些辅助脚本，验证成功NAS的内网穿透。
+lightbox_enable: true
 ---
 
 ## TL;DR

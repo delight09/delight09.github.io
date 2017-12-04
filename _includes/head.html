@@ -1,5 +1,5 @@
 <head>
-  <script>
+  <script type="text/javascript">
   str_ssi = '<!--#include virtual="/mycgi/getMilliSeconds.cgi" -->';
   if (str_ssi.indexOf('--') != -1) { // SSI not parsed
     str_ssi = '';
@@ -11,10 +11,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
+  {% if page.lightbox_enable %}
+  <script type="text/javascript" async="" defer="" src="/assets/luminous.min.js"></script>
+  <link rel="stylesheet" href="{{ "/assets/luminous.css" | relative_url }}">
+  {% endif %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {% if page.comments_enable %}
   <link rel="stylesheet" href="{{ "/assets/comments.css" | relative_url }}">
@@ -23,6 +26,6 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   
   {% seo %}
-  {% include piwik-analytics.html %}
-  {% include magic-apache.html %}
+  {% include piwik_analytics.html %}
+  {% include magic_apache.html %}
 </head>

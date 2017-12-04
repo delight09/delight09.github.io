@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    window.addEventListener('load', lightboxHandler, false);
+
+    function lightboxHandler() {
+        // Add embed class to article images
+        document.getElementsByTagName('article')[0].
+        querySelectorAll('img').
+        forEach(function(e) {
+            e.className += 'lightbox-embed';
+        });
+
+        // Remove embed class for loading prompt
+        document.getElementById('comments-loading-prompt').
+                    getElementsByTagName('img')[0].classList.remove('lightbox-embed');
+
+        let galleryOpts = {
+			arrowNavigation: true,
+	};
+
+        let luminousOpts = {
+            sourceAttribute: 'src',
+            caption: function(trigger) {
+		    let _caption = '<p>如图: ' + trigger.getAttribute('alt') + '</p>' +
+			    '<p> 提示: 可使用鼠标滚轮缩放图片</p>';
+                    return _caption;
+            },
+            onOpen: disableScrollOnPage,
+            onClose: enableScrollOnPage,
+            includeImgixJSClass: false,
+            injectBaseStyles: false,
+        };
+
+        new LuminousGallery(document.querySelectorAll('.lightbox-embed'), galleryOpts, luminousOpts);
+    }
+
+function scaleLightboxImage(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+	let _dom_img = document.querySelector('.lum-open').querySelector('.lum-img'); // current lightbox
+	let _raw_scale = _dom_img.style.transform;
+	let _scale = parseFloat(_raw_scale.match(/.*,(.+)\).*$/)[1]); // get current scale
+	if (e.deltaY > 0) {
+		_scale += 0.125; // minimal transform unit
+	} else {
+		_scale -= 0.125;
+	}
+	document.querySelector('.lum-open').querySelector('.lum-img').style.transform = 'scale(' + _scale + ',' + _scale + ')';
+        window.MAGIC_LIGHTBOX_SCALE = _scale;
+}
+
+function disableScrollOnPage() {
+  window.addEventListener('DOMMouseScroll', scaleLightboxImage, false); // older FF
+  window.onwheel = scaleLightboxImage; // modern standard
+  window.onmousewheel = document.onmousewheel = scaleLightboxImage; // older browsers, IE
+}
+
+function enableScrollOnPage() {
+    window.removeEventListener('DOMMouseScroll', scaleLightboxImage, false);
+    window.onmousewheel = document.onmousewheel = null; 
+    window.onwheel = null; 
+
+    // Unified lightboxs scale
+    document.querySelectorAll('.lum-img').
+        forEach(function(e) {
+            e.style.transform = window.MAGIC_LIGHTBOX_SCALE;
+        });
+}
+</script>

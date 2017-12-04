@@ -182,6 +182,10 @@
 /**
  * Page content
  */
+.lightbox-embed {
+  cursor: zoom-in;
+}
+
 .page-content {
   padding: $spacing-unit 0;
 }
