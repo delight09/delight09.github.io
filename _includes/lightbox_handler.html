@@ -11,21 +11,21 @@
 
         // Remove embed class for loading prompt
         document.getElementById('comments-loading-prompt').
-                    getElementsByTagName('img')[0].classList.remove('lightbox-embed');
+        getElementsByTagName('img')[0].classList.remove('lightbox-embed');
 
         let galleryOpts = {
-			arrowNavigation: true,
-	};
+            arrowNavigation: true,
+        };
 
         let luminousOpts = {
             sourceAttribute: 'src',
             caption: function(trigger) {
-		    let _caption = '<p>如图: ' + trigger.getAttribute('alt') + '</p>' +
-			    '<p> 提示: 可使用鼠标滚轮缩放图片</p>';
-                    return _caption;
+                let _caption = '<p>如图: ' + trigger.getAttribute('alt') + '</p>' +
+                    '<p style="font-size: 0.725em;"> 提示: 可使用鼠标滚轮缩放图片，鼠标拖拽移动图片</p>';
+                return _caption;
             },
-            onOpen: disableScrollOnPage,
-            onClose: enableScrollOnPage,
+            onOpen: enableAdjustViewbox,
+            onClose: disableAdjustViewbox,
             includeImgixJSClass: false,
             injectBaseStyles: false,
         };
@@ -33,37 +33,82 @@
         new LuminousGallery(document.querySelectorAll('.lightbox-embed'), galleryOpts, luminousOpts);
     }
 
-function scaleLightboxImage(e) {
-  e = e || window.event;
-  if (e.preventDefault)
-      e.preventDefault();
-	let _dom_img = document.querySelector('.lum-open').querySelector('.lum-img'); // current lightbox
-	let _raw_scale = _dom_img.style.transform;
-	let _scale = parseFloat(_raw_scale.match(/.*,(.+)\).*$/)[1]); // get current scale
-	if (e.deltaY > 0) {
-		_scale += 0.125; // minimal transform unit
-	} else {
-		_scale -= 0.125;
-	}
-	document.querySelector('.lum-open').querySelector('.lum-img').style.transform = 'scale(' + _scale + ',' + _scale + ')';
+    function scaleLightboxImage(e) {
+        if (e && typeof e.preventDefault === 'function') {
+            e.preventDefault();
+        }
+
+        let _dom_img = document.querySelector('.lum-open').querySelector('.lum-img'); // current lightbox
+        let _raw_scale = _dom_img.style.transform;
+        let _scale = parseFloat(_raw_scale.match(/.*,(.+)\).*$/)[1]); // get current scale
+        if (e.deltaY > 0) {
+            _scale += 0.125; // minimal transform unit
+        } else {
+            _scale -= 0.125;
+        }
+        document.querySelector('.lum-open').querySelector('.lum-img').style.transform = 'scale(' + _scale + ',' + _scale + ')';
         window.MAGIC_LIGHTBOX_SCALE = _scale;
-}
+    }
 
-function disableScrollOnPage() {
-  window.addEventListener('DOMMouseScroll', scaleLightboxImage, false); // older FF
-  window.onwheel = scaleLightboxImage; // modern standard
-  window.onmousewheel = document.onmousewheel = scaleLightboxImage; // older browsers, IE
-}
+    function repositionHelper(e) {
+        if (e && typeof e.preventDefault === 'function') {
+            e.preventDefault();
+        }
 
-function enableScrollOnPage() {
-    window.removeEventListener('DOMMouseScroll', scaleLightboxImage, false);
-    window.onmousewheel = document.onmousewheel = null; 
-    window.onwheel = null; 
+        let _raw_left, _raw_top, _x_delta, _y_delta, _left, _top;
+        if (typeof this.style === 'undefined') { // fallback
+            _raw_left = 0;
+            _raw_top = 0;
+        } else {
+            _raw_left = this.style.left ? this.style.left : '0';
+            _raw_top = this.style.top ? this.style.top : '0';
+        }
+        _left = parseInt(_raw_left, 10);
+        _top = parseInt(_raw_top, 10);
+        _x_delta = e.movementX || e.mozMovementX || e.webkitMovementX || 0;
+        _y_delta = e.movementY || e.mozMovementY || e.webkitMovementY || 0;
+        this.style.left = _left + _x_delta + 'px';
+        this.style.top = _top + _y_delta + 'px';
+    }
 
-    // Unified lightboxs scale
-    document.querySelectorAll('.lum-img').
+    function repositionCleanUpHelper(e) {
+        if (e && typeof e.preventDefault === 'function') {
+            e.preventDefault();
+        }
+
+        this.onmousemove = null;
+    }
+
+    function repositionLightboxImage(e) {
+        if (e && typeof e.preventDefault === 'function') {
+            e.preventDefault();
+        }
+
+        this.onmousemove = repositionHelper;
+        this.onmouseup = repositionCleanUpHelper;
+    }
+
+    function enableAdjustViewbox() {
+        // Scroll to scale
+        window.addEventListener('DOMMouseScroll', scaleLightboxImage, false); // older FF
+        window.onwheel = scaleLightboxImage; // modern standard
+        window.onmousewheel = document.onmousewheel = scaleLightboxImage; // older browsers, IE
+
+        // Drag to reposition
+        document.querySelector('.lum-open').querySelector('.lum-img').
+        addEventListener('mousedown', repositionLightboxImage, false);
+    }
+
+    function disableAdjustViewbox() {
+        // Disable scroll scale
+        window.removeEventListener('DOMMouseScroll', scaleLightboxImage, false);
+        window.onmousewheel = document.onmousewheel = null;
+        window.onwheel = null;
+
+        // Unified lightboxs scale
+        document.querySelectorAll('.lum-img').
         forEach(function(e) {
             e.style.transform = window.MAGIC_LIGHTBOX_SCALE;
         });
-}
+    }
 </script>

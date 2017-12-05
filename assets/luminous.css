@@ -36,6 +36,23 @@
   text-align: center;
 }
 
+.lightbox-poweredby {
+  position: absolute;
+  bottom: -1.5em;
+  right: 0;
+  color: #fff;
+  font-size: 0.725em;
+}
+
+.lightbox-poweredby a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.lightbox-poweredby a:visited {
+  color: #fff;
+}
+
 @keyframes lum-fade {
   0% { opacity: 0; }
   100% { opacity: 1; }
