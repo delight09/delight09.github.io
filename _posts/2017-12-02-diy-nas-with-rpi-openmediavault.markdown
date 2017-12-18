@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用树梅派组建低成本网络存储
-categories: nas
+categories: howto
 tags: [rpi, low-end, nas, management, linux]
 image: /assets/diy-nas-with-rpi-openmediavault/feature.jpg
 description: 使用两条U盘组成RAID1作为存储介质，树梅派1代b型作为主机。使用qshell工具从AliOSS获得bucket所有资源URL。通过vmstat检测分析FTP和SMB两种常见NAS服务的性能数据，结果性能相近，可根据实际需要开启或关闭。讨论了RAID1自建NAS的一般灾备操作。最后使用第三方服务和一些辅助脚本，验证成功NAS的内网穿透。
@@ -10,7 +10,7 @@ lightbox_enable: true
 
 ## TL;DR
 
-使用两条U盘组成RAID1作为存储介质，树梅派1代b型作为主机。使用qshell工具从AliOSS获得bucket所有资源URL。通过vmstat检测分析FTP和SMB两种常见NAS服务的性能数据，结果性能相近，可根据实际需要开启或关闭。讨论了RAID1自建NAS的一般灾备操作。最后使用第三方服务和一些辅助脚本，验证成功NAS的内网穿透。
+使用两条U盘组成[RAID1][wiki-raid1]作为存储介质，安装有[OpenMediaVault][omv-install-guide]2.x系统的树梅派1代b型作为主机。使用[qshell工具][qshell-link]从AliOSS获得bucket所有资源URL。通过vmstat检测分析FTP和SMB两种常见NAS服务的性能数据，结果性能相近，可根据实际需要开启或关闭。讨论了RAID1自建NAS的一般灾备操作。最后使用[第三方服务][natapp-register]和[辅助脚本][natapp-checker-script]，实现NAS的内网穿透并成功验证可行性。
 
 ## 引言： 再见AliOSS，信息寡头
 
