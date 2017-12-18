@@ -81,13 +81,13 @@ convert -delay 3 -loop 0 -dither None -colors 80 "/tmp/clipframes/ffout*.png" -f
 
 
 ## FYI:    
-[Capture screen in Linux][ffmpeg-wiki-capturing]
+- FFmpeg Wiki - [Capture screen in Linux][ffmpeg-wiki-capturing]
 
-[How to trim first seconds with ffmpeg][so-trim]
+- Superuser.com - [How to trim first seconds with ffmpeg][so-trim]
 
-[How to convert with reasonable quality][so-convert]
+- Superuser.com - [How to convert with reasonable quality][so-convert]
 
-[Fuzz Factor - Matching Similar/Multiple Colors][imagemagick-color-fuzz]
+- Imagemagick Document - [Fuzz Factor - Matching Similar/Multiple Colors][imagemagick-color-fuzz]
 
 [so-convert]: http://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 [so-trim]: http://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality

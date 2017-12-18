@@ -21,7 +21,7 @@ sudo yum -y install nm-connection-editor
 
 ## FYI
 
-搜索组包是否存在
+- 搜索组包是否存在
 
 {% highlight shell %}
 yum grouplist hidden | grep X
