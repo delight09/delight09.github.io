@@ -4,7 +4,7 @@ title: php7下使用PECL安装Piwik的GeoIP插件
 category: howto
 tags: [piwik, php7, signature]
 image: /assets/piwik-geoip-pecl-php7-debian9/feature.png
-description: 
+description: 提供在PHP7环境下用PECL编译安装GeoIP插件的步骤。附上在配置插件时可能遇到的几个问题。
 ---
 
 ## 引子
