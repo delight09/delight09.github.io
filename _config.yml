@@ -9,8 +9,6 @@ footer_title: For Your Infomation
 baseurl: ""
 url: https://blog.djh.im
 logo: /assets/trusty-logo-20171119.png
-host: blog.djh.im
-port: 80
 version: v0.0.3
 
 # social network spec
