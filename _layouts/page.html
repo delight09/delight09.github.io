@@ -11,4 +11,8 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.comments_enable %}
+    {% include isso_comments.html %}
+    {% include comments_handler.html %}
+  {% endif %}
 </article>
