@@ -44,7 +44,7 @@ comments_enable: true
 
 #### 事迹
 
-使用昵称**imdjh**，写作drill工具使用指南`drill if you can...`，常年Google搜索结果排名第一。
+使用昵称**imdjh**，写作drill工具使用指南*"Drill if you can..."*，常年Google搜索结果排名第一。
 
 独立将WePlay项目容器化(docker)。
 
@@ -60,11 +60,11 @@ comments_enable: true
 
 - Sun UNIX Keyboard Type 7 -- 普通薄膜键盘
 
-- Amazon Fire 7" 5th Gen-2015([ford][xda-index-ford]) -- 早饭时刷RSS，床上看视频用
+- Amazon Fire 7" 5th Gen-2015([ford][xda-index-ford]) -- 早饭刷RSS，床上用kodi
 
-- Grado [SR80e][grado-sr80e] -- 入门级开放式耳机，放空自己或是与办公室的青轴键盘作斗争
+- Grado [SR80e][grado-sr80e] -- 入门级开放式耳机，放空自己或是与办公室的青轴用户作斗争
 
-- [PlayStation Vita][wiki-psv] 1000 series -- 出行交通时的娱乐方案
+- [PlayStation Vita][wiki-psv] 1000 series -- 出行交通的娱乐方案
 
 - iPhone SE Gen-2016 -- 不硌手的[``通用输入流''][xkcd-phone]设备
 
@@ -74,6 +74,9 @@ comments_enable: true
 
 - dockone.io -- [快速Docker化基于Socket.IO的HTML5游戏][proj-letweplay]
 
+- mydigit.cn -- [发烧永无止境，发烧烧到计算器！][mydigit-bbs-calc]
+
+- redhat.com -- [Verify a Red Hat Certified Professional][redhat-verify-rhce]
 
 [link-usesthis]: https://usesthis.com
 [xda-index-ford]: https://forum.xda-developers.com/amazon-fire/general/index-amazon-fire-2015-t3210485
@@ -85,3 +88,5 @@ comments_enable: true
 [imdjh-post]: http://imdjh.github.io/toolchain/2015/10/07/drill-if-you-can-dig-if-you-have-to.html
 [proj-letweplay]: http://dockone.io/article/870
 [nyt-hefner]: https://www.nytimes.com/2017/09/27/obituaries/hugh-hefner-dead.html
+[mydigit-bbs-calc]: https://web.archive.org/web/20180110132039/http://bbs.mydigit.cn/read.php?tid=2236751
+[redhat-verify-rhce]: https://www.redhat.com/rhtapps/certification/verify/?certId=140-231-812
